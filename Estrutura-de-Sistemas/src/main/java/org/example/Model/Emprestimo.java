@@ -1,23 +1,23 @@
 package org.example.Model;
 
-public class Emprestimos {
+public class Emprestimo {
     private int id;
     Livro livro;
-    Usuario usuarioModel;
+    Usuario usuario;
     private String dataEmprestimo;
     private String dataDevolucao;
 
-    public Emprestimos(int id, Livro livro, Usuario usuarioModel, String dataEmprestimo, String dataDevolucao) {
+    public Emprestimo(int id, Livro livro, Usuario usuario, String dataEmprestimo, String dataDevolucao) {
         this.id = id;
         this.livro = livro;
-        this.usuarioModel = usuarioModel;
+        this.usuario = usuario;
         this.dataEmprestimo = dataEmprestimo;
         this.dataDevolucao = dataDevolucao;
     }
 
-    public Emprestimos(Livro livro, Usuario usuarioModel, String dataEmprestimo, String dataDevolucao) {
+    public Emprestimo(Livro livro, Usuario usuario, String dataEmprestimo, String dataDevolucao) {
         this.livro = livro;
-        this.usuarioModel = usuarioModel;
+        this.usuario = usuario;
         this.dataEmprestimo = dataEmprestimo;
         this.dataDevolucao = dataDevolucao;
     }
@@ -30,20 +30,18 @@ public class Emprestimos {
         this.id = id;
     }
 
-    public Livro getLivroModel() {
+    public Livro getLivro() {
         return livro;
     }
 
-    public void setLivroModel(Livro livroModel) {
-        this.livro = livroModel;
+    public void setLivro(Livro livro) {
+        this.livro = livro;
     }
 
-    public Usuario getUsuarioModel() {
-        return usuarioModel;
-    }
+    public Usuario getUsuario() {return usuario;}
 
-    public void setUsuarioModel(Usuario usuarioModel) {
-        this.usuarioModel = usuarioModel;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
     public String getDataEmprestimo() {

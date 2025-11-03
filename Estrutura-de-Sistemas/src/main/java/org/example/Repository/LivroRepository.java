@@ -14,6 +14,7 @@ public class LivroRepository {
                 (titulo ,autor ,ano ,disponivel)
                 VALUES (?,?,?,?)
                 """;
+
         try(Connection conn = Conexao.getConnection();
             PreparedStatement stmt = conn.prepareStatement(query)){
 
@@ -21,6 +22,7 @@ public class LivroRepository {
             stmt.setString(2,livro.getAutor());
             stmt.setString(3,livro.getAno());
             stmt.setBoolean(4,livro.isDisponivel());
+
             stmt.executeUpdate();
         }
     }
