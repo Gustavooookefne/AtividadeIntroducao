@@ -8,6 +8,8 @@ public class Main {
     Scanner sc = new Scanner(System.in);
         public static void main(String[] args) {
 
-            MenuView menuView = new MenuView();
+            MenuView menu = new MenuView();
+            menu.exibirMenu();
+
     }
 }
