@@ -1,14 +1,22 @@
 package org.example.View;
 
+import org.example.Service.LivroService;
+import org.example.Service.UsuarioService;
+
 import java.util.Scanner;
 
 public class MenuView {
     Scanner sc = new Scanner(System.in);
 
 
+    LivroService livroService = new LivroService();
+    /// ///
+    UsuarioService usuarioService = new UsuarioService();
 
 
 
+    LivroView livroView = new LivroView(livroService);
+    /// ///
 
 
 
@@ -31,6 +39,15 @@ public class MenuView {
 
             switch (opcao){
                 case 1:{
+                    livroView.CadastrarLivro();
+                    break;
+                }
+
+                case 2:{
+                    break;
+                }
+
+                case 3:{
 
                     break;
                 }

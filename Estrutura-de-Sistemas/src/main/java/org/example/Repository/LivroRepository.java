@@ -6,6 +6,8 @@ import org.example.Model.Livro;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class LivroRepository {
     public static void inserirLivro(Livro livro)throws SQLException{
@@ -25,5 +27,12 @@ public class LivroRepository {
 
             stmt.executeUpdate();
         }
+    }
+
+    public List<Livro> list() throws SQLException{
+        List<Livro> livro = new ArrayList<>();
+        String query = """
+                INSERT INTO livros (id_livro ,titulo ,autor ,ano ,disponiel)
+                """;
     }
 }
