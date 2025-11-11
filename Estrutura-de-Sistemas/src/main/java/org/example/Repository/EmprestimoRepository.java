@@ -6,6 +6,7 @@ import org.example.Model.Emprestimo;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.time.LocalDate;
 
 public class EmprestimoRepository {
     public static void inserirEmprestimo (Emprestimo emprestimo) throws SQLException{
@@ -25,5 +26,8 @@ public class EmprestimoRepository {
 
             stmt.executeUpdate();
         }
+    }
+
+    public void registrarEmprestimo(int livroId, int usuarioId, LocalDate dataHoje) {
     }
 }

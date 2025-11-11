@@ -34,5 +34,14 @@ public class LivroRepository {
         String query = """
                 INSERT INTO livros (id_livro ,titulo ,autor ,ano ,disponiel)
                 """;
+        return livro;
+    }
+
+    public Livro consultarPorId(int livroId) {
+        return null;
+    }
+
+    public void atualizarStatus(int livroId, boolean b) {
+
     }
 }

@@ -18,11 +18,6 @@ public class MenuView {
     LivroView livroView = new LivroView(livroService);
     /// ///
 
-
-
-
-
-
     public void exibirMenu(){
         int opcao;
 
@@ -44,10 +39,16 @@ public class MenuView {
                 }
 
                 case 2:{
+
                     break;
                 }
 
                 case 3:{
+
+                    break;
+                }
+
+                case 4:{
 
                     break;
                 }

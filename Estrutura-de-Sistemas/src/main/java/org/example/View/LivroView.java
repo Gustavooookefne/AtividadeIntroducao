@@ -20,10 +20,13 @@ public class LivroView {
 
             System.out.println("Coloque o Titulo do Livro: ");
             String titulo = sc.next();
+
             System.out.println("Coloque o Autor do Livro: ");
             String autor = sc.next();
+
             System.out.println("Coloque o Ano que o Livro foi publicado: ");
             String ano = sc.next();
+
             System.out.println("O Livro Esta disponivel?: ");
             boolean disponivel = sc.nextBoolean();
 
