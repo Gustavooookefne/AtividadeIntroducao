@@ -3,6 +3,7 @@ package org.example.View;
 import org.example.Model.Livro;
 import org.example.Service.LivroService;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class LivroView {
@@ -38,4 +39,43 @@ public class LivroView {
             e.printStackTrace();
         }
     }
+
+    public void listarTodosLivros() {
+        try {
+            System.out.println("\n---------  Lista de Todos os Livros ---------");
+
+            List<Livro> livros = livroService.consultarTodosLivros();
+
+
+            if (livros.isEmpty()) {
+                System.out.println("Nenhum livro cadastrado no sistema.");
+            } else {
+                // 3. Imprime o cabeçalho
+                System.out.println("ID | TÍTULO | AUTOR | ANO | STATUS");
+                System.out.println("-----------------------------------------------------");
+
+
+
+                for (Livro livro : livros) {
+                    String status = livro.isDisponivel() ? "Disponível" : "Emprestado";
+
+                    System.out.println(
+                            livro.getId() + " | " +
+                                    livro.getTitulo() + " | " +
+                                    livro.getAutor() + " | " +
+                                    livro.getAno() + " | " +
+                                    status
+                    );
+                }
+            }
+            System.out.println("-----------------------------------------------------\n");
+
+        } catch (Exception e) {
+
+
+            System.out.println("Falha ao listar Livros.");
+            e.printStackTrace();
+        }
+    }
 }
+

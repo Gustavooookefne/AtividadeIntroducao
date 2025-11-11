@@ -10,13 +10,17 @@ import java.time.LocalDate;
 
 public class EmprestimoService {
 
-    private LivroRepository livroRepository;
-    private EmprestimoRepository emprestimoRepository;
+    private static LivroRepository livroRepository;
+    private static EmprestimoRepository emprestimoRepository;
 
 
     public EmprestimoService(LivroRepository lr, EmprestimoRepository er) {
         this.livroRepository = lr;
         this.emprestimoRepository = er;
+    }
+
+    public EmprestimoService() {
+
     }
 
     public static void registrarNovoEmprestimo(int livroId, int usuarioId) throws Exception {
