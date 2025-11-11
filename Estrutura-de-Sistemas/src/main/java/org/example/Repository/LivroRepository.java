@@ -59,6 +59,16 @@ public class LivroRepository {
         return null;
     }
 
-    public void atualizarStatus(int livroId, boolean b) {
+    public static void atualizarStatus(int livroId, boolean disponivel) throws SQLException {
+        String sql = "UPDATE livros SET disponivel = ? WHERE id = ?";
+
+        try (Connection conn = Conexao.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setBoolean(1, disponivel); // Receberá 'true'
+            stmt.setInt(2, livroId);
+            stmt.executeUpdate();
+        }
     }
+
 }

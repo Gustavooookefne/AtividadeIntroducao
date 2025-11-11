@@ -12,13 +12,14 @@ public class MenuView {
 
 
     LivroService livroService = new LivroService();
-    LivroRepository livroRepository = new LivroRepository();
+    LivroService livroServiceListagem = new LivroService();
     UsuarioService usuarioService = new UsuarioService();
+    EmprestimoService emprestimoService = new EmprestimoService();
 
 
 
     LivroView livroView = new LivroView(livroService);
-
+    LivroView livroViewListagem = new LivroView(livroServiceListagem);
     UsuarioView usuarioView = new UsuarioView(usuarioService);
 
     public void exibirMenu(){
@@ -42,7 +43,7 @@ public class MenuView {
                 }
 
                 case 2:{
-                    // Consultar todos os Livros
+                    livroServiceListagem.consultarTodosLivros();
                     break;
                 }
 

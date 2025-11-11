@@ -1,6 +1,7 @@
 package org.example.View;
 
 import org.example.Model.Livro;
+import org.example.Service.EmprestimoService;
 import org.example.Service.LivroService;
 
 import java.util.List;
@@ -75,6 +76,29 @@ public class LivroView {
 
             System.out.println("Falha ao listar Livros.");
             e.printStackTrace();
+        }
+    }
+
+    public void registrarDevolucao() {
+        try {
+            System.out.println("--------- Devolução de Livro ---------");
+
+            // 1. Pede o ID do Empréstimo
+            System.out.println("Digite o ID do Empréstimo:");
+            int emprestimoId = sc.nextInt();
+            sc.nextLine(); // Limpa o buffer
+
+            // 2. Pede a Data
+            System.out.println("Digite a data da devolução (AAAA-MM-DD):");
+            String dataDevolucao = sc.nextLine();
+
+            // 3. Chama o Service
+            EmprestimoService.registrarDevolucao(emprestimoId, dataDevolucao);
+
+            System.out.println("\n Devolução registrada com sucesso!");
+
+        } catch (Exception e) {
+            System.err.println("\n Falha ao devolver: " + e.getMessage());
         }
     }
 }
