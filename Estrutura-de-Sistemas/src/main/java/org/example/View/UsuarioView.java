@@ -24,10 +24,7 @@ public class UsuarioView {
             int idLivro = sc.nextInt();
 
             System.out.println("Coloque o nome do Cliente: ");
-            String nomeCliente = sc.next();
-
-            System.out.println("Coloque o email do Cliente: ");
-            String emailCliente = sc.next();
+            int idUsuario = sc.nextInt();
 
             System.out.println("Coloque a data de emprestimo do livro: ");
             String dataEmprestimo = sc.next();
@@ -35,8 +32,7 @@ public class UsuarioView {
             System.out.println("Coloque a data de devolução do livro: ");
             String dataDevocucao = sc.next();
 
-           EmprestimoService.registrarNovoEmprestimo(idLivro, idLivro);
-
+           EmprestimoService.registrarNovoEmprestimo(idLivro, idUsuario);
         }catch (Exception e){
             System.out.println("Falha ao registrar emprestimo");
         }
