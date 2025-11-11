@@ -1,11 +1,9 @@
 package org.example.Service;
 
-import org.example.Model.Emprestimo;
 import org.example.Model.Livro;
 import org.example.Repository.EmprestimoRepository;
 import org.example.Repository.LivroRepository;
 
-import java.sql.SQLException;
 import java.time.LocalDate;
 
 public class EmprestimoService {
@@ -13,9 +11,9 @@ public class EmprestimoService {
     private static LivroRepository livroRepository;
     private static EmprestimoRepository emprestimoRepository;
 
-    public EmprestimoService(LivroRepository lr, EmprestimoRepository er) {
-        this.livroRepository = lr;
-        this.emprestimoRepository = er;
+    public EmprestimoService(LivroRepository livroRepository , EmprestimoRepository emprestimoRepository) {
+        this.livroRepository = livroRepository;
+        this.emprestimoRepository = emprestimoRepository;
     }
 
     public EmprestimoService() {

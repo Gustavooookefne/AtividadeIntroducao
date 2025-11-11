@@ -16,6 +16,9 @@ public class LivroView {
         this.sc = new Scanner(System.in);
     }
 
+    public LivroView(EmprestimoService emprestimoService) {
+    }
+
     public void CadastrarLivro(){
         try{
             System.out.println("--------- Sistema da Biblioteca ---------\n");

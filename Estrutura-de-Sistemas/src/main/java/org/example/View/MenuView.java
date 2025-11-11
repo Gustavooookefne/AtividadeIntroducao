@@ -1,6 +1,6 @@
 package org.example.View;
 
-import org.example.Repository.LivroRepository;
+
 import org.example.Service.EmprestimoService;
 import org.example.Service.LivroService;
 import org.example.Service.UsuarioService;
@@ -21,6 +21,8 @@ public class MenuView {
     LivroView livroView = new LivroView(livroService);
     LivroView livroViewListagem = new LivroView(livroServiceListagem);
     UsuarioView usuarioView = new UsuarioView(usuarioService);
+    LivroView livroViewDevolucao = new LivroView(emprestimoService);
+
 
     public void exibirMenu(){
         int opcao;
@@ -43,7 +45,7 @@ public class MenuView {
                 }
 
                 case 2:{
-                    livroServiceListagem.consultarTodosLivros();
+                    livroViewListagem.listarTodosLivros();
                     break;
                 }
 
@@ -53,7 +55,7 @@ public class MenuView {
                 }
 
                 case 4:{
-                    // Registrar devocução
+                    livroViewDevolucao.registrarDevolucao();
                     break;
                 }
 
